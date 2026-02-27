@@ -1,0 +1,117 @@
+name: Kafka Connect
+description: Kafka Connect is a tool for scalably and reliably streaming data between Apache Kafka and other systems. It makes it simple to quickly define connectors that move large collections of data into and out of Kafka.
+image: https://kafka.apache.org/images/logo.png
+url: https://kafka.apache.org/documentation/#connect
+created: 2024-01-01 00:00:00+00:00
+modified: 2024-01-01 00:00:00+00:00
+specificationVersion: '0.18'
+tags:
+- streaming
+- data integration
+- ETL
+- apache kafka
+- connectors
+apis:
+- name: Kafka Connect REST API
+  description: The Kafka Connect REST API allows you to manage connectors and tasks, monitor status, and interact with the Connect cluster
+  image: https://kafka.apache.org/images/logo.png
+  humanURL: https://kafka.apache.org/documentation/#connect_rest
+  baseURL: http://localhost:8083
+  tags:
+  - REST API
+  - connectors
+  - tasks
+  properties:
+  - type: Documentation
+    url: https://kafka.apache.org/documentation/#connect_rest
+  - type: OpenAPI
+    url: https://api.example.com/kafka-connect-openapi.yaml
+  - type: X-Version
+    data: '3.6'
+  contact:
+  - FN: Apache Kafka
+    email: dev@kafka.apache.org
+    url: https://kafka.apache.org/contact
+  endpoints:
+  - name: Get Connector Plugins
+    description: Return a list of connector plugins installed in the Kafka Connect cluster
+    method: GET
+    path: /connector-plugins
+  - name: Get Connectors
+    description: Get a list of active connectors
+    method: GET
+    path: /connectors
+  - name: Create Connector
+    description: Create a new connector
+    method: POST
+    path: /connectors
+  - name: Get Connector Info
+    description: Get information about a specific connector
+    method: GET
+    path: /connectors/{name}
+  - name: Get Connector Config
+    description: Get the configuration for a connector
+    method: GET
+    path: /connectors/{name}/config
+  - name: Update Connector Config
+    description: Update the configuration for a connector
+    method: PUT
+    path: /connectors/{name}/config
+  - name: Get Connector Status
+    description: Get current status of the connector
+    method: GET
+    path: /connectors/{name}/status
+  - name: Restart Connector
+    description: Restart a connector
+    method: POST
+    path: /connectors/{name}/restart
+  - name: Pause Connector
+    description: Pause the connector
+    method: PUT
+    path: /connectors/{name}/pause
+  - name: Resume Connector
+    description: Resume a paused connector
+    method: PUT
+    path: /connectors/{name}/resume
+  - name: Delete Connector
+    description: Delete a connector
+    method: DELETE
+    path: /connectors/{name}
+  - name: Get Connector Tasks
+    description: Get a list of tasks for a connector
+    method: GET
+    path: /connectors/{name}/tasks
+  - name: Get Task Status
+    description: Get status of a specific task
+    method: GET
+    path: /connectors/{name}/tasks/{taskid}/status
+  - name: Restart Task
+    description: Restart an individual task
+    method: POST
+    path: /connectors/{name}/tasks/{taskid}/restart
+maintainers:
+- FN: Apache Software Foundation
+  email: dev@kafka.apache.org
+  url: https://kafka.apache.org
+common:
+- type: Getting Started
+  url: https://kafka.apache.org/quickstart
+- type: Tutorials
+  url: https://kafka.apache.org/documentation/#connect_tutorials
+- type: GitHub Repository
+  url: https://github.com/apache/kafka
+- type: Issue Tracker
+  url: https://issues.apache.org/jira/projects/KAFKA
+- type: Mailing List
+  url: https://kafka.apache.org/contact
+- type: Slack Community
+  url: https://kafka-users.slack.com
+- type: License
+  url: https://www.apache.org/licenses/LICENSE-2.0
+- type: Blog
+  url: https://kafka.apache.org/blog
+include:
+- name: Confluent Platform
+  url: https://docs.confluent.io/platform/current/connect/index.html
+- name: Kafka Connect Hub
+  url: https://www.confluent.io/hub/
