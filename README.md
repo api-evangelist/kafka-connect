@@ -1,47 +1,51 @@
 # Kafka Connect (kafka-connect)
 Kafka Connect is a tool for scalably and reliably streaming data between Apache Kafka and other systems. It makes it simple to quickly define connectors that move large collections of data into and out of Kafka.
 
-**URL:** [Visit APIs.json URL](https://kafka.apache.org/documentation/#connect)
+**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/kafka-connect/refs/heads/main/apis.yml)
+
+## Scope
+
+- **Type:** Index 
+- **Position:** Consuming 
+- **Access:** 3rd-Party 
 
 ## Tags:
 
- - streaming, data integration, ETL, apache kafka, connectors
+ - Apache Kafka, Connectors, Data Integration, ETL, Streaming
 
 ## Timestamps
 
-- **Created:** 2024-01-01 00:00:00+00:00 
-- **Modified:** 2024-01-01 00:00:00+00:00 
+- **Created:** 2024-01-01 
+- **Modified:** 2026-04-28 
 
 ## APIs
 
 ### Kafka Connect REST API
-The Kafka Connect REST API allows you to manage connectors and tasks, monitor status, and interact with the Connect cluster
+The Kafka Connect REST API allows you to manage connectors and tasks, monitor status, and interact with the Connect cluster.
 
 **Human URL:** [https://kafka.apache.org/documentation/#connect_rest](https://kafka.apache.org/documentation/#connect_rest)
+
+**Base URL:** `http://localhost:8083`
 
 
 #### Tags:
 
- - REST API, connectors, tasks
+ - Connectors, REST API, Tasks
 
 #### Properties
 
 - [Documentation](https://kafka.apache.org/documentation/#connect_rest)
-- [OpenAPI](https://api.example.com/kafka-connect-openapi.yaml)
 
 ## Common Properties
 
+- [Website](https://kafka.apache.org/documentation/#connect)
+- [Documentation](https://kafka.apache.org/documentation/#connect)
 - [Getting Started](https://kafka.apache.org/quickstart)
-- [Tutorials](https://kafka.apache.org/documentation/#connect_tutorials)
-- [GitHub Repository](https://github.com/apache/kafka)
-- [Issue Tracker](https://issues.apache.org/jira/projects/KAFKA)
-- [Mailing List](https://kafka.apache.org/contact)
-- [Slack Community](https://kafka-users.slack.com)
-- [License](https://www.apache.org/licenses/LICENSE-2.0)
+- [GitHub Organization](https://github.com/apache/kafka)
 - [Blog](https://kafka.apache.org/blog)
 
 ## Maintainers
 
-**FN:** Apache Software Foundation
+**FN:** Kin Lane
 
-**Email:** dev@kafka.apache.org
+**Email:** kin@apievangelist.com
