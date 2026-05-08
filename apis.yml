@@ -31,6 +31,8 @@ apis:
     properties:
       - type: Documentation
         url: https://kafka.apache.org/documentation/#connect_rest
+      - type: OpenAPI
+        url: openapi/kafka-connect-openapi.yml
 common:
   - type: Website
     url: https://kafka.apache.org/documentation/#connect

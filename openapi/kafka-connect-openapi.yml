@@ -1,0 +1,339 @@
+openapi: 3.1.0
+info:
+  title: Kafka Connect REST API
+  description: Minimal OpenAPI 3.1 description of the Apache Kafka Connect REST API for managing connectors, tasks, plugins, offsets, and topics.
+  version: "1.0.0"
+x-generated-from: https://kafka.apache.org/documentation/#connect_rest
+x-generated-by: claude-crawl-2026-05-08
+servers:
+  - url: http://localhost:8083
+    description: Local Kafka Connect worker
+paths:
+  /:
+    get:
+      summary: Get worker version and cluster info
+      operationId: getRoot
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+  /connectors:
+    get:
+      summary: List connectors
+      operationId: listConnectors
+      parameters:
+        - name: expand
+          in: query
+          schema:
+            type: string
+            enum: [status, info]
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+    post:
+      summary: Create connector
+      operationId: createConnector
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '201':
+          description: Created
+  /connectors/{name}:
+    parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+    get:
+      summary: Get connector
+      operationId: getConnector
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+    delete:
+      summary: Delete connector
+      operationId: deleteConnector
+      responses:
+        '204':
+          description: Deleted
+  /connectors/{name}/config:
+    parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+    get:
+      summary: Get connector configuration
+      operationId: getConnectorConfig
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+    put:
+      summary: Create or update connector configuration
+      operationId: putConnectorConfig
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: OK
+  /connectors/{name}/status:
+    parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+    get:
+      summary: Get connector status
+      operationId: getConnectorStatus
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+  /connectors/{name}/restart:
+    parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+    post:
+      summary: Restart connector
+      operationId: restartConnector
+      parameters:
+        - name: includeTasks
+          in: query
+          schema:
+            type: boolean
+        - name: onlyFailed
+          in: query
+          schema:
+            type: boolean
+      responses:
+        '204':
+          description: Restarted
+  /connectors/{name}/pause:
+    parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+    put:
+      summary: Pause connector
+      operationId: pauseConnector
+      responses:
+        '202':
+          description: Accepted
+  /connectors/{name}/resume:
+    parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+    put:
+      summary: Resume connector
+      operationId: resumeConnector
+      responses:
+        '202':
+          description: Accepted
+  /connectors/{name}/stop:
+    parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+    put:
+      summary: Stop connector
+      operationId: stopConnector
+      responses:
+        '204':
+          description: Stopped
+  /connectors/{name}/tasks:
+    parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+    get:
+      summary: List connector tasks
+      operationId: listConnectorTasks
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+  /connectors/{name}/tasks/{taskid}/status:
+    parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: taskid
+        in: path
+        required: true
+        schema:
+          type: integer
+    get:
+      summary: Get task status
+      operationId: getTaskStatus
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+  /connectors/{name}/tasks/{taskid}/restart:
+    parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: taskid
+        in: path
+        required: true
+        schema:
+          type: integer
+    post:
+      summary: Restart task
+      operationId: restartTask
+      responses:
+        '204':
+          description: Restarted
+  /connectors/{name}/topics:
+    parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+    get:
+      summary: Get connector topics
+      operationId: getConnectorTopics
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+  /connectors/{name}/topics/reset:
+    parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+    put:
+      summary: Reset connector topics
+      operationId: resetConnectorTopics
+      responses:
+        '200':
+          description: OK
+  /connectors/{connector}/offsets:
+    parameters:
+      - name: connector
+        in: path
+        required: true
+        schema:
+          type: string
+    get:
+      summary: Get connector offsets
+      operationId: getConnectorOffsets
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+    patch:
+      summary: Alter connector offsets
+      operationId: alterConnectorOffsets
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: OK
+    delete:
+      summary: Reset connector offsets
+      operationId: deleteConnectorOffsets
+      responses:
+        '200':
+          description: OK
+  /connector-plugins:
+    get:
+      summary: List connector plugins
+      operationId: listConnectorPlugins
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+  /connector-plugins/{name}/config/validate:
+    parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+    put:
+      summary: Validate connector configuration
+      operationId: validateConnectorConfig
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
