@@ -1,0 +1,13 @@
+{
+  "repo": "kafka-connect",
+  "feeds": [
+    {
+      "source": "https://kafka.apache.org/blog",
+      "feed_url": "https://kafka.apache.org/blog/index.xml",
+      "title": "Blog on Apache Kafka",
+      "saved": 0
+    }
+  ],
+  "fetched": "2026-05-09T20:17:51Z",
+  "post_count": 0
+}
