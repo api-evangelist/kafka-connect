@@ -38,9 +38,9 @@ common:
     url: https://kafka.apache.org/documentation/#connect
   - type: Documentation
     url: https://kafka.apache.org/documentation/#connect
-  - type: Getting Started
+  - type: GettingStarted
     url: https://kafka.apache.org/quickstart
-  - type: GitHub Organization
+  - type: GitHubOrganization
     url: https://github.com/apache/kafka
   - type: Blog
     url: https://kafka.apache.org/blog
