@@ -1,0 +1,72 @@
+executed: '2026-05-30T00:00:00.000Z'
+reviewer: api-evangelist
+scope: async-event-surface
+question: Does Apache Kafka Connect expose a documented async/event surface that
+  warrants an AsyncAPI specification alongside the existing OpenAPI?
+decision: no-asyncapi
+summary: Kafka Connect's only first-party HTTP surface is the synchronous REST API
+  (already captured in openapi/kafka-connect-openapi.yml). All asynchronous behavior
+  is delegated to Apache Kafka itself via topics whose names and payload schemas
+  are defined by the user or by each individual source/sink connector, not by
+  Kafka Connect. Apache does not publish a universal message contract that could
+  be modeled as an AsyncAPI for Kafka Connect itself.
+surfaces_considered:
+  - surface: REST API (control plane)
+    async: false
+    documented: true
+    modeled_as: OpenAPI 3.1 (openapi/kafka-connect-openapi.yml)
+    notes: Fully synchronous. PUT /pause, /resume, /stop and POST /restart return
+      202/204 but are request/response, not event-driven.
+  - surface: Connector data streams (Kafka topics)
+    async: true
+    documented: false
+    modeled_as: none
+    notes: Source connectors write to user-configured Kafka topics; sink connectors
+      read from them. Topic names and record schemas are defined per connector
+      (Debezium, JDBC, S3, MongoDB, etc.), not by Kafka Connect. Cannot be
+      modeled as a single AsyncAPI without fabricating per-connector contracts.
+  - surface: Internal storage topics
+    async: true
+    documented: partial
+    modeled_as: none
+    notes: config.storage.topic, offset.storage.topic, status.storage.topic are
+      documented configuration parameters. Apache explicitly marks their payloads
+      as internal implementation detail; no public schema is published.
+  - surface: Dead Letter Queue (DLQ) topic
+    async: true
+    documented: partial
+    modeled_as: none
+    notes: errors.deadletterqueue.topic.name is documented per sink connector.
+      Connect adds __connect.errors.* headers (documented), but the message
+      body is the original failed record from the source connector. No universal
+      payload schema.
+  - surface: JMX metrics MBeans
+    async: false
+    documented: true
+    modeled_as: none
+    notes: kafka.connect:type=connect-worker-metrics, connector-metrics,
+      task-metrics, sink-task-metrics, source-task-metrics, connect-coordinator-metrics.
+      Monitoring surface (pull-based), not a message/event surface. Out of scope
+      for AsyncAPI.
+  - surface: ConnectorStatus.Listener / TaskStatus.Listener / ConfigBackingStore.UpdateListener
+    async: true
+    documented: true (Javadoc)
+    modeled_as: none
+    notes: Java SPIs in org.apache.kafka.connect.runtime. In-process callbacks
+      for plugin authors, not a network/event API. Not appropriate for AsyncAPI.
+  - surface: Webhooks / SSE / WebSockets
+    async: true
+    documented: false
+    modeled_as: none
+    notes: Apache Kafka Connect ships none of these. Status changes are observed
+      by polling GET /connectors/{name}/status or by consuming the status
+      storage topic directly.
+recommendation: Keep the existing OpenAPI as the sole machine-readable contract
+  for Kafka Connect itself. Async/event modeling (AsyncAPI) should live with the
+  individual connector providers (e.g., Debezium, Confluent connectors) where
+  topic names and record schemas are actually defined, not at the Kafka Connect
+  framework level.
+artifacts_created: []
+artifacts_updated:
+  - apis.yml (bumped modified to 2026-05-30)
+results: []
