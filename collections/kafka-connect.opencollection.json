@@ -1,0 +1,421 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Kafka Connect REST API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Get worker version and cluster info",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "http://localhost:8083/"
+      },
+      "docs": "Get worker version and cluster info"
+    },
+    {
+      "info": {
+        "name": "List connectors",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "http://localhost:8083/connectors",
+        "params": [
+          {
+            "name": "expand",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "List connectors"
+    },
+    {
+      "info": {
+        "name": "Create connector",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "http://localhost:8083/connectors",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Create connector"
+    },
+    {
+      "info": {
+        "name": "Get connector",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "http://localhost:8083/connectors/:name",
+        "params": [
+          {
+            "name": "name",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Get connector"
+    },
+    {
+      "info": {
+        "name": "Delete connector",
+        "type": "http"
+      },
+      "http": {
+        "method": "DELETE",
+        "url": "http://localhost:8083/connectors/:name",
+        "params": [
+          {
+            "name": "name",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Delete connector"
+    },
+    {
+      "info": {
+        "name": "Get connector configuration",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "http://localhost:8083/connectors/:name/config",
+        "params": [
+          {
+            "name": "name",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Get connector configuration"
+    },
+    {
+      "info": {
+        "name": "Create or update connector configuration",
+        "type": "http"
+      },
+      "http": {
+        "method": "PUT",
+        "url": "http://localhost:8083/connectors/:name/config",
+        "params": [
+          {
+            "name": "name",
+            "value": "",
+            "type": "path"
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Create or update connector configuration"
+    },
+    {
+      "info": {
+        "name": "Get connector status",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "http://localhost:8083/connectors/:name/status",
+        "params": [
+          {
+            "name": "name",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Get connector status"
+    },
+    {
+      "info": {
+        "name": "Restart connector",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "http://localhost:8083/connectors/:name/restart",
+        "params": [
+          {
+            "name": "name",
+            "value": "",
+            "type": "path"
+          },
+          {
+            "name": "includeTasks",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "onlyFailed",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "Restart connector"
+    },
+    {
+      "info": {
+        "name": "Pause connector",
+        "type": "http"
+      },
+      "http": {
+        "method": "PUT",
+        "url": "http://localhost:8083/connectors/:name/pause",
+        "params": [
+          {
+            "name": "name",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Pause connector"
+    },
+    {
+      "info": {
+        "name": "Resume connector",
+        "type": "http"
+      },
+      "http": {
+        "method": "PUT",
+        "url": "http://localhost:8083/connectors/:name/resume",
+        "params": [
+          {
+            "name": "name",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Resume connector"
+    },
+    {
+      "info": {
+        "name": "Stop connector",
+        "type": "http"
+      },
+      "http": {
+        "method": "PUT",
+        "url": "http://localhost:8083/connectors/:name/stop",
+        "params": [
+          {
+            "name": "name",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Stop connector"
+    },
+    {
+      "info": {
+        "name": "List connector tasks",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "http://localhost:8083/connectors/:name/tasks",
+        "params": [
+          {
+            "name": "name",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "List connector tasks"
+    },
+    {
+      "info": {
+        "name": "Get task status",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "http://localhost:8083/connectors/:name/tasks/:taskid/status",
+        "params": [
+          {
+            "name": "name",
+            "value": "",
+            "type": "path"
+          },
+          {
+            "name": "taskid",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Get task status"
+    },
+    {
+      "info": {
+        "name": "Restart task",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "http://localhost:8083/connectors/:name/tasks/:taskid/restart",
+        "params": [
+          {
+            "name": "name",
+            "value": "",
+            "type": "path"
+          },
+          {
+            "name": "taskid",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Restart task"
+    },
+    {
+      "info": {
+        "name": "Get connector topics",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "http://localhost:8083/connectors/:name/topics",
+        "params": [
+          {
+            "name": "name",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Get connector topics"
+    },
+    {
+      "info": {
+        "name": "Reset connector topics",
+        "type": "http"
+      },
+      "http": {
+        "method": "PUT",
+        "url": "http://localhost:8083/connectors/:name/topics/reset",
+        "params": [
+          {
+            "name": "name",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Reset connector topics"
+    },
+    {
+      "info": {
+        "name": "Get connector offsets",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "http://localhost:8083/connectors/:connector/offsets",
+        "params": [
+          {
+            "name": "connector",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Get connector offsets"
+    },
+    {
+      "info": {
+        "name": "Alter connector offsets",
+        "type": "http"
+      },
+      "http": {
+        "method": "PATCH",
+        "url": "http://localhost:8083/connectors/:connector/offsets",
+        "params": [
+          {
+            "name": "connector",
+            "value": "",
+            "type": "path"
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Alter connector offsets"
+    },
+    {
+      "info": {
+        "name": "Reset connector offsets",
+        "type": "http"
+      },
+      "http": {
+        "method": "DELETE",
+        "url": "http://localhost:8083/connectors/:connector/offsets",
+        "params": [
+          {
+            "name": "connector",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Reset connector offsets"
+    },
+    {
+      "info": {
+        "name": "List connector plugins",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "http://localhost:8083/connector-plugins"
+      },
+      "docs": "List connector plugins"
+    },
+    {
+      "info": {
+        "name": "Validate connector configuration",
+        "type": "http"
+      },
+      "http": {
+        "method": "PUT",
+        "url": "http://localhost:8083/connector-plugins/:name/config/validate",
+        "params": [
+          {
+            "name": "name",
+            "value": "",
+            "type": "path"
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Validate connector configuration"
+    }
+  ],
+  "bundled": true
+}
