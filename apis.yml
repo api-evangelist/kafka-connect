@@ -33,6 +33,10 @@ apis:
       - type: OpenAPI
         url: openapi/kafka-connect-openapi.yml
 common:
+  - type: VulnerabilityDisclosure
+    url: security/kafka-connect-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/kafka-connect-domain-security.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/apachekafka
   - type: Website
