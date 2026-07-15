@@ -33,6 +33,8 @@ apis:
       - type: OpenAPI
         url: openapi/kafka-connect-openapi.yml
 common:
+  - type: AgenticAccess
+    url: agentic-access/kafka-connect-agentic-access.yml
   - type: VulnerabilityDisclosure
     url: security/kafka-connect-vulnerability-disclosure.yml
   - type: DomainSecurity
