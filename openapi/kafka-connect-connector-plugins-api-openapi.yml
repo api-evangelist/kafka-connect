@@ -1,0 +1,52 @@
+openapi: 3.1.0
+info:
+  title: Kafka Connect REST Connector Plugins API
+  description: Minimal OpenAPI 3.1 description of the Apache Kafka Connect REST API for managing connectors, tasks, plugins, offsets, and topics.
+  version: 1.0.0
+servers:
+- url: http://localhost:8083
+  description: Local Kafka Connect worker
+tags:
+- name: Connector Plugins
+paths:
+  /connector-plugins:
+    get:
+      summary: List connector plugins
+      operationId: listConnectorPlugins
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+      tags:
+      - Connector Plugins
+  /connector-plugins/{name}/config/validate:
+    parameters:
+    - name: name
+      in: path
+      required: true
+      schema:
+        type: string
+    put:
+      summary: Validate connector configuration
+      operationId: validateConnectorConfig
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+      tags:
+      - Connector Plugins
+x-generated-from: https://kafka.apache.org/documentation/#connect_rest
+x-generated-by: claude-crawl-2026-05-08

@@ -1,0 +1,26 @@
+openapi: 3.1.0
+info:
+  title: Kafka Connect REST Connector Plugins Kafka Connect REST API API
+  description: Minimal OpenAPI 3.1 description of the Apache Kafka Connect REST API for managing connectors, tasks, plugins, offsets, and topics.
+  version: 1.0.0
+servers:
+- url: http://localhost:8083
+  description: Local Kafka Connect worker
+tags:
+- name: Kafka Connect REST API
+paths:
+  /:
+    get:
+      summary: Get worker version and cluster info
+      operationId: getRoot
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+      tags:
+      - Kafka Connect REST API
+x-generated-from: https://kafka.apache.org/documentation/#connect_rest
+x-generated-by: claude-crawl-2026-05-08
