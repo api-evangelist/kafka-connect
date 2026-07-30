@@ -4,7 +4,19 @@ description: >-
   Kafka Connect is a tool for scalably and reliably streaming data between Apache Kafka and other systems. It makes it
   simple to quickly define connectors that move large collections of data into and out of Kafka.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Freemium
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/kafka-connect.png
 tags:
   - Apache Kafka
   - Connectors
@@ -16,22 +28,43 @@ created: '2024-01-01'
 modified: '2026-05-30'
 specificationVersion: '0.19'
 apis:
-  - aid: kafka-connect:kafka-connect-rest-api
-    name: Kafka Connect REST API
-    description: >-
-      The Kafka Connect REST API allows you to manage connectors and tasks, monitor status, and interact with the
-      Connect cluster.
-    humanURL: https://kafka.apache.org/documentation/#connect_rest
-    baseURL: http://localhost:8083
-    tags:
-      - Connectors
-      - REST API
-      - Tasks
-    properties:
-      - type: Documentation
-        url: https://kafka.apache.org/documentation/#connect_rest
-      - type: OpenAPI
-        url: openapi/kafka-connect-openapi.yml
+- aid: kafka-connect:kafka-connect-connector-plugins-api
+  name: Kafka Connect Connector Plugins API
+  description: The Connector Plugins API from Kafka Connect — 2 operation(s) for connector plugins.
+  humanURL: https://kafka.apache.org/documentation/#connect_rest
+  baseURL: http://localhost:8083
+  tags:
+  - Connector Plugins
+  properties:
+  - type: OpenAPI
+    url: openapi/kafka-connect-connector-plugins-api-openapi.yml
+  - type: Documentation
+    url: https://kafka.apache.org/documentation/#connect_rest
+- aid: kafka-connect:kafka-connect-connectors-api
+  name: Kafka Connect Connectors API
+  description: The Connectors API from Kafka Connect — 14 operation(s) for connectors.
+  humanURL: https://kafka.apache.org/documentation/#connect_rest
+  baseURL: http://localhost:8083
+  tags:
+  - Connectors
+  properties:
+  - type: OpenAPI
+    url: openapi/kafka-connect-connectors-api-openapi.yml
+  - type: Documentation
+    url: https://kafka.apache.org/documentation/#connect_rest
+- aid: kafka-connect:kafka-connect-kafka-connect-rest-api-api
+  name: Kafka Connect Kafka Connect REST API API
+  description: >-
+    The Kafka Connect REST API API from Kafka Connect — 1 operation(s) for kafka connect rest api.
+  humanURL: https://kafka.apache.org/documentation/#connect_rest
+  baseURL: http://localhost:8083
+  tags:
+  - Kafka Connect REST API
+  properties:
+  - type: OpenAPI
+    url: openapi/kafka-connect-kafka-connect-rest-api-api-openapi.yml
+  - type: Documentation
+    url: https://kafka.apache.org/documentation/#connect_rest
 common:
   - type: AgenticAccess
     url: agentic-access/kafka-connect-agentic-access.yml
