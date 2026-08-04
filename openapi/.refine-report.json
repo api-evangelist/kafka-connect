@@ -1,0 +1,18 @@
+{
+  "provider": "kafka-connect",
+  "sources": [
+    "kafka-connect-connector-plugins-api-openapi.yml",
+    "kafka-connect-connectors-api-openapi.yml",
+    "kafka-connect-kafka-connect-rest-api-api-openapi.yml"
+  ],
+  "outputs": [
+    "kafka-connect-connector-plugins-api-openapi.yml",
+    "kafka-connect-connectors-api-openapi.yml",
+    "kafka-connect-kafka-connect-rest-api-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
