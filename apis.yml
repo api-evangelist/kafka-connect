@@ -4,6 +4,17 @@ description: >-
   Kafka Connect is a tool for scalably and reliably streaming data between Apache Kafka and other systems. It makes it
   simple to quickly define connectors that move large collections of data into and out of Kafka.
 type: Index
+deliveryModel:
+  model: unknown
+  open_source: false
+  commercial: false
+  callable_host: false
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - openapi
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: unknown
