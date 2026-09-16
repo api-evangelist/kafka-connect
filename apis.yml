@@ -1,8 +1,8 @@
 aid: kafka-connect
 name: Kafka Connect
-description: >-
-  Kafka Connect is a tool for scalably and reliably streaming data between Apache Kafka and other systems. It makes it
-  simple to quickly define connectors that move large collections of data into and out of Kafka.
+description: Kafka Connect is a tool for scalably and reliably streaming data between Apache Kafka and
+  other systems. It makes it simple to quickly define connectors that move large collections of data into
+  and out of Kafka.
 type: Index
 deliveryModel:
   model: unknown
@@ -29,14 +29,14 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/kafka-connect.png
 tags:
-  - Apache Kafka
-  - Connectors
-  - Data Integration
-  - ETL
-  - Streaming
+- Apache Kafka
+- Connectors
+- Data Integration
+- ETL
+- Streaming
 url: https://raw.githubusercontent.com/api-evangelist/kafka-connect/refs/heads/main/apis.yml
 created: '2024-01-01'
-modified: '2026-05-30'
+modified: '2026-09-16'
 specificationVersion: '0.23'
 apis:
 - aid: kafka-connect:kafka-connect-connector-plugins-api
@@ -64,9 +64,9 @@ apis:
   - type: Documentation
     url: https://kafka.apache.org/documentation/#connect_rest
 - aid: kafka-connect:kafka-connect-kafka-connect-rest-api-api
-  name: Kafka Connect Kafka Connect REST API API
-  description: >-
-    The Kafka Connect REST API API from Kafka Connect — 1 operation(s) for kafka connect rest api.
+  name: Kafka Connect Kafka Connect REST API
+  description: The Kafka Connect REST API API from Kafka Connect — 1 operation(s) for kafka connect rest
+    api.
   humanURL: https://kafka.apache.org/documentation/#connect_rest
   baseURL: http://localhost:8083
   tags:
@@ -77,26 +77,26 @@ apis:
   - type: Documentation
     url: https://kafka.apache.org/documentation/#connect_rest
 common:
-  - type: AgenticAccess
-    url: agentic-access/kafka-connect-agentic-access.yml
-  - type: VulnerabilityDisclosure
-    url: security/kafka-connect-vulnerability-disclosure.yml
-  - type: DomainSecurity
-    url: security/kafka-connect-domain-security.yml
-  - type: LinkedIn
-    url: https://www.linkedin.com/company/apachekafka
-  - type: Website
-    url: https://kafka.apache.org/documentation/#connect
-  - type: Documentation
-    url: https://kafka.apache.org/documentation/#connect
-  - type: GettingStarted
-    url: https://kafka.apache.org/quickstart
-  - type: GitHubOrganization
-    url: https://github.com/apache/kafka
-  - type: Blog
-    url: https://kafka.apache.org/blog
+- type: AgenticAccess
+  url: agentic-access/kafka-connect-agentic-access.yml
+- type: VulnerabilityDisclosure
+  url: security/kafka-connect-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/kafka-connect-domain-security.yml
+- type: LinkedIn
+  url: https://www.linkedin.com/company/apachekafka
+- type: Website
+  url: https://kafka.apache.org/documentation/#connect
+- type: Documentation
+  url: https://kafka.apache.org/documentation/#connect
+- type: GettingStarted
+  url: https://kafka.apache.org/quickstart
+- type: GitHubOrganization
+  url: https://github.com/apache/kafka
+- type: Blog
+  url: https://kafka.apache.org/blog
 maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+- FN: Kin Lane
+  email: kin@apievangelist.com
 x-parent: kafka
 x-relationship: product
