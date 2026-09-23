@@ -1,9 +1,7 @@
 {
   "provider": "kafka-connect",
   "sources": [
-    "kafka-connect-connector-plugins-api-openapi.yml",
-    "kafka-connect-connectors-api-openapi.yml",
-    "kafka-connect-kafka-connect-rest-api-api-openapi.yml"
+    "_ae-authored/kafka-connect-openapi.yml"
   ],
   "outputs": [
     "kafka-connect-connector-plugins-api-openapi.yml",
@@ -14,10 +12,38 @@
   "errors": [],
   "warnings": [],
   "notes": [
-    "kafka-connect-connector-plugins-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "kafka-connect-connectors-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "kafka-connect-kafka-connect-rest-api-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "sourced from openapi/_original/ (0 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "kafka-connect-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "kafka-connect-openapi.yml: tagged paths GET / -> Kafka Connect REST API",
+    "kafka-connect-openapi.yml: tagged paths GET /connectors -> Connectors",
+    "kafka-connect-openapi.yml: tagged paths POST /connectors -> Connectors",
+    "kafka-connect-openapi.yml: tagged paths GET /connectors/{name} -> Connectors",
+    "kafka-connect-openapi.yml: tagged paths DELETE /connectors/{name} -> Connectors",
+    "kafka-connect-openapi.yml: tagged paths GET /connectors/{name}/config -> Connectors",
+    "kafka-connect-openapi.yml: tagged paths PUT /connectors/{name}/config -> Connectors",
+    "kafka-connect-openapi.yml: tagged paths GET /connectors/{name}/status -> Connectors",
+    "kafka-connect-openapi.yml: tagged paths POST /connectors/{name}/restart -> Connectors",
+    "kafka-connect-openapi.yml: tagged paths PUT /connectors/{name}/pause -> Connectors",
+    "kafka-connect-openapi.yml: tagged paths PUT /connectors/{name}/resume -> Connectors",
+    "kafka-connect-openapi.yml: tagged paths PUT /connectors/{name}/stop -> Connectors",
+    "kafka-connect-openapi.yml: tagged paths GET /connectors/{name}/tasks -> Connectors",
+    "kafka-connect-openapi.yml: tagged paths GET /connectors/{name}/tasks/{taskid}/status -> Connectors",
+    "kafka-connect-openapi.yml: tagged paths POST /connectors/{name}/tasks/{taskid}/restart -> Connectors",
+    "kafka-connect-openapi.yml: tagged paths GET /connectors/{name}/topics -> Connectors",
+    "kafka-connect-openapi.yml: tagged paths PUT /connectors/{name}/topics/reset -> Connectors",
+    "kafka-connect-openapi.yml: tagged paths GET /connectors/{connector}/offsets -> Connectors",
+    "kafka-connect-openapi.yml: tagged paths PATCH /connectors/{connector}/offsets -> Connectors",
+    "kafka-connect-openapi.yml: tagged paths DELETE /connectors/{connector}/offsets -> Connectors",
+    "kafka-connect-openapi.yml: tagged paths GET /connector-plugins -> Connector Plugins",
+    "kafka-connect-openapi.yml: tagged paths PUT /connector-plugins/{name}/config/validate -> Connector Plugins",
+    "kafka-connect-openapi.yml: declared missing tag: Connector Plugins",
+    "kafka-connect-openapi.yml: declared missing tag: Connectors",
+    "kafka-connect-openapi.yml: declared missing tag: Kafka Connect REST API",
     "apis.yml register: already-registered"
   ],
-  "skipped": []
+  "skipped": [
+    "kafka-connect-connector-plugins-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "kafka-connect-connectors-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "kafka-connect-kafka-connect-rest-api-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
