@@ -1,4 +1,4 @@
-# Kafka Connect (kafka-connect)
+# Kafka Connect
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,57 +66,121 @@
 
 Kafka Connect is a tool for scalably and reliably streaming data between Apache Kafka and other systems. It makes it simple to quickly define connectors that move large collections of data into and out of Kafka.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/kafka-connect/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/kafka-connect/refs/heads/main/apis.yml)
+**Areas:** Apache Kafka · Connectors · Data Integration · ETL · Streaming
 
-## Scope
+## Kafka Connect on APIs.io
 
-- **Type:** Index
+Everything profiled for Kafka Connect is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/kafka-connect/](https://apis.io/providers/kafka-connect/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (3)
 
-- Apache Kafka
-- Connectors
-- Data Integration
-- ETL
-- Streaming
+- [Kafka Connect Connector Plugins API](https://apis.io/apis/kafka-connect/kafka-connect-connector-plugins-api/) — The Connector Plugins API from Kafka Connect — 2 operation(s) for connector plugins.
+- [Kafka Connect Connectors API](https://apis.io/apis/kafka-connect/kafka-connect-connectors-api/) — The Connectors API from Kafka Connect — 14 operation(s) for connectors.
+- [Kafka Connect Kafka Connect REST API](https://apis.io/apis/kafka-connect/kafka-connect-kafka-connect-rest-api-api/) — The Kafka Connect REST API API from Kafka Connect — 1 operation(s) for kafka connect rest api.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2024-01-01
-- **Modified:** 2026-05-30
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Kafka Connect REST API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-The Kafka Connect REST API allows you to manage connectors and tasks, monitor status, and interact with the Connect cluster.
+- [Kafka Connect Agentic Access](https://apis.io/agentic-access/kafka-connect/kafka-connect-agentic-access/)
 
-- **Human URL:** [https://kafka.apache.org/documentation/#connect_rest](https://kafka.apache.org/documentation/#connect_rest)
-- **Base URL:** `http://localhost:8083`
+#### Collections (4)
 
-#### Tags
+Postman and Open Collection request collections.
 
-- Connectors
-- REST API
-- Tasks
+- [Kafka Connect REST API](https://apis.io/collections/kafka-connect/open-kafka-connect/)
+- [Kafka Connect REST Connector Plugins API](https://apis.io/collections/kafka-connect/open-kafka-connect-connector-plugins-api/)
+- [Kafka Connect REST Connector Plugins Connectors API](https://apis.io/collections/kafka-connect/open-kafka-connect-connectors-api/)
+- [Kafka Connect REST Connector Plugins Kafka Connect REST API API](https://apis.io/collections/kafka-connect/open-kafka-connect-kafka-connect-rest-api-api/)
 
-#### Properties
+#### Security (2)
 
-- [Documentation](https://kafka.apache.org/documentation/#connect_rest)
-- [OpenAPI](openapi/kafka-connect-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/kafka-connect.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/kafka-connect.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Authentication, trust centre, and vulnerability disclosure.
 
-## Common Properties
+- [Kafka Connect Domain Security](https://apis.io/security/kafka-connect/kafka-connect-domain-security/)
+- [Kafka Connect Vulnerability Disclosure](https://apis.io/security/kafka-connect/kafka-connect-vulnerability-disclosure/)
 
-- [LinkedIn](https://www.linkedin.com/company/apachekafka)
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Kafka Connect Plans Pricing](https://apis.io/plans/kafka-connect/kafka-connect-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Kafka Connect Rate Limits](https://apis.io/rate-limits/kafka-connect/kafka-connect-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Kafka Connect Finops](https://apis.io/finops/kafka-connect/kafka-connect-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://kafka.apache.org/documentation/#connect)
 - [Documentation](https://kafka.apache.org/documentation/#connect)
-- [Getting Started](https://kafka.apache.org/quickstart)
-- [GitHub Organization](https://github.com/apache/kafka)
+- [Getting started](https://kafka.apache.org/quickstart)
 - [Blog](https://kafka.apache.org/blog)
+- [GitHub](https://github.com/apache/kafka)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 23.4** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 62.5 |
+| Contract quality | 33.7 |
+| Contract governance | 0.0 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 23.8 |
+| Access clarity | 7.9 |
+
+**Agent readiness 15.4** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 11.8** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/kafka-connect/](https://apis.io/providers/kafka-connect/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Kafka Connect: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/kafka-connect/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
